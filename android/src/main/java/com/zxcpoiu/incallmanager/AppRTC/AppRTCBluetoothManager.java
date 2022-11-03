@@ -409,7 +409,7 @@ public class AppRTCBluetoothManager {
     if (!pairedDevices.isEmpty()) {
       Log.d(TAG, "paired devices:");
       for (BluetoothDevice device : pairedDevices) {
-        Log.d(TAG, " name=" + device.getName() + ", address=" + device.getAddress());
+        Log.d(TAG, " name=" + device.getName() + ", address=" + device.getAddress()+ ", deviceClass=" + String.valueOf(device.getBluetoothClass().getDeviceClass())+ ", deviceMajorClass=" + String.valueOf(device.getBluetoothClass().getMajorDeviceClass()));
       }
     }
   }
@@ -431,6 +431,13 @@ public class AppRTCBluetoothManager {
     Log.d(TAG, "cancelTimer");
     handler.removeCallbacks(bluetoothTimeoutRunnable);
   }
+
+
+  @Nullable
+  private List<BluetoothDevice> getBluetoothDevice() {
+    List<BluetoothDevice> devices = bluetoothHeadset.getConnectedDevices();
+  }
+
   /**
    * Called when start of the BT SCO channel takes too long time. Usually
    * happens when the BT device has been turned on during an ongoing call.
