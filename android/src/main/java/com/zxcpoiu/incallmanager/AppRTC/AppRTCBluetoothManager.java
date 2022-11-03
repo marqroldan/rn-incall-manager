@@ -417,7 +417,7 @@ public class AppRTCBluetoothManager {
     }
 
     protected void unregisterReceiver(BroadcastReceiver receiver) {
-        if (receiver) {
+        if (receiver != null) {
             try {
                 apprtcContext.unregisterReceiver(receiver);
             } catch (final Exception exception) {
