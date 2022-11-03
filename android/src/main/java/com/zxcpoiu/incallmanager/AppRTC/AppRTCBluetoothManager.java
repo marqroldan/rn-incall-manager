@@ -37,9 +37,9 @@ import com.zxcpoiu.incallmanager.InCallManagerModule;
 public class AppRTCBluetoothManager {
   private static final String TAG = "AppRTCBluetoothManager";
   // Timeout interval for starting or stopping audio to a Bluetooth SCO device.
-  private static final int BLUETOOTH_SCO_TIMEOUT_MS = 4000;
+  private static final int BLUETOOTH_SCO_TIMEOUT_MS = 6000;
   // Maximum number of SCO connection attempts.
-  private static final int MAX_SCO_CONNECTION_ATTEMPTS = 2;
+  private static final int MAX_SCO_CONNECTION_ATTEMPTS = 10;
   // Bluetooth connection state.
   public enum State {
     // Bluetooth is not available; no adapter or Bluetooth is off.
