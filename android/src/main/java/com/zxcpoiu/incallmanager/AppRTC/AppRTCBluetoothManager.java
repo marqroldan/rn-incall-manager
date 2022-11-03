@@ -417,7 +417,15 @@ public class AppRTCBluetoothManager {
     }
 
     protected void unregisterReceiver(BroadcastReceiver receiver) {
-        apprtcContext.unregisterReceiver(receiver);
+        if (receiver) {
+            try {
+                apprtcContext.unregisterReceiver(receiver);
+            } catch (final Exception exception) {
+                // The receiver was not registered.
+                // There is nothing to do in that case.
+                // Everything is fine.
+            }
+        }
     }
 
     protected boolean getBluetoothProfileProxy(
