@@ -28,7 +28,8 @@ declare class InCallManager {
 
   setSpeakerphoneOn(enable: boolean): void;
 
-  setForceSpeakerphoneOn(flag: boolean): void;
+  /// leave it blank for it to be nullish and to natively call with an argument of `0`
+  setForceSpeakerphoneOn(flag?: boolean): void;
 
   setMicrophoneMute(enable: boolean): void;
 
